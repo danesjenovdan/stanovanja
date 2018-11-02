@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main">
+    <div class="landing">
       <img class="image" alt="Logo akcije" src="../assets/logo.png">
       <div class="right">
         Vnesi plačo in se zjoči:
@@ -12,43 +12,49 @@
       </div>
     </div>
 
-    <h1 ref="buying">Nakup</h1>
-    <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allApartments }} stanovanj
-      objavljenih na portalu nepremicnine.net
-        <sup><a href="#"@click.prevent="toggleExplanation('buying')">zakaj?</a></sup>,
-      pri čemer je povprečna površina stanovanja {{ available.toBuy.averageArea }} m².
-      <div
-        v-show="explanationVisible.buying"
-        class="explanation"
-      >
-        Predpostavili smo, da si pripravljeni plačevati mesečni obrok v višini
-        ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
-        Če bi najel kredit za 19 let po 2,9% obrestni meri (slovensko
-        povprečje), bi bil končni znesek, ki ga prejmeš od banke,
-        {{ formatPrice(purchasingPower) }}.
-      </div>
-    </p>
+    <div class="container">
+      <h2 ref="buying">Nakup</h2>
+      <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allApartments }} stanovanj
+        objavljenih na portalu nepremicnine.net
+          <sup><a href="#"@click.prevent="toggleExplanation('buying')">zakaj?</a></sup>,
+        pri čemer je povprečna površina stanovanja {{ available.toBuy.averageArea }} m².
+        <div
+          v-show="explanationVisible.buying"
+          class="explanation"
+        >
+          Predpostavili smo, da si pripravljeni plačevati mesečni obrok v višini
+          ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
+          Če bi najel kredit za 19 let po 2,9% obrestni meri (slovensko
+          povprečje), bi bil končni znesek, ki ga prejmeš od banke,
+          {{ formatPrice(purchasingPower) }}.
+        </div>
+      </p>
 
-    <h1 ref="renting">Najem</h1>
-    <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allApartments }} stanovanj
-      objavljenih na portalu nepremicnine.net
-        <sup><a href="#" @click.prevent="toggleExplanation('renting')">zakaj?</a></sup>,
-      pri čemer je povprečna površina stanovanja {{ available.toRent.averageArea }} m².
-      <div
-        v-show="explanationVisible.renting"
-        class="explanation"
-      >
-        Predpostavili smo, da si pripravljeni plačevati mesečno najemnino v višini
-        ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
-        Če bi se vsa stanovanja oddajala po 13 €/m², kolikor je ljubljansko povprečje,
-        si lahko torej privoščiš stanovanje veliko največ {{ rentableArea }} m².
-      </div>
-    </p>
+      <h2 ref="renting">Najem</h2>
+      <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allApartments }} stanovanj
+        objavljenih na portalu nepremicnine.net
+          <sup><a href="#" @click.prevent="toggleExplanation('renting')">zakaj?</a></sup>,
+        pri čemer je povprečna površina stanovanja {{ available.toRent.averageArea }} m².
+        <div
+          v-show="explanationVisible.renting"
+          class="explanation"
+        >
+          Predpostavili smo, da si pripravljeni plačevati mesečno najemnino v višini
+          ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
+          Če bi se vsa stanovanja oddajala po 13 €/m², kolikor je ljubljansko povprečje,
+          si lahko torej privoščiš stanovanje veliko največ {{ rentableArea }} m².
+        </div>
+      </p>
+
+      <h2>Cene rastejo hitreje od plač</h2>
+      <price-vs-wage />
+    </div>
   </div>
 </template>
 
 <script>
 import rawApartmentData from '../assets/data.json';
+import PriceVsWage from './PriceVsWage';
 
 const apartmentData = rawApartmentData.map(apartment => ({
   ...apartment, rent: apartment.size * 13,
@@ -56,6 +62,9 @@ const apartmentData = rawApartmentData.map(apartment => ({
 
 export default {
   name: 'IncomeInput',
+  components: {
+    PriceVsWage,
+  },
   data() {
     return {
       monthlyIncome: 1083,
@@ -112,14 +121,14 @@ export default {
 </script>
 
 <style scoped>
-.main {
+.landing {
   align-items: center;
   border: 21px solid #7371fc;
   display: flex;
   height: 100vh;
   justify-content: center;
   text-align: left;
-  width: 100vw;
+  width: 100%;
 }
 
 .image {
@@ -140,9 +149,16 @@ export default {
   width: 100%;
 }
 
-.explanation {
-  font-size: 24px;
-  color: #666;
-  margin-top: 48px;
+
+.container {
+  width: 960px;
+  margin: 0 auto;
 }
+
+  .explanation {
+    font-size: 24px;
+    color: #666;
+    margin-top: 48px;
+  }
+
 </style>
