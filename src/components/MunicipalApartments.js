@@ -4,17 +4,12 @@ export default {
   extends: Bar,
   mounted() {
     const data = {
-      labels: ['2014', '2017'],
+      labels: ['2013', '2014', '2015', '2016', '2017'],
       datasets: [
         {
-          label: 'Cena na m²',
+          label: 'Gradnja občinskih stanovanj',
           backgroundColor: '#00aeef',
-          data: [1910, 2410],
-        },
-        {
-          label: 'Povprečna neto plača',
-          backgroundColor: '#eaf300',
-          data: [1130, 1190],
+          data: [5, 15, 142, 16, 61],
         },
       ],
     };
@@ -23,13 +18,7 @@ export default {
       scales: {
         yAxes: [{
           ticks: { beginAtZero: true },
-          gridLines: { display: false },
         }],
-      },
-      tooltips: {
-        callbacks: {
-          label: item => `${item.yLabel} €`,
-        },
       },
     };
 

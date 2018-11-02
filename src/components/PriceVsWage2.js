@@ -7,14 +7,16 @@ export default {
       labels: ['2014', '2017'],
       datasets: [
         {
-          label: 'Cena na m²',
+          label: 'Cena za 50 m²',
+          yAxisID: 'price',
           backgroundColor: '#00aeef',
-          data: [1910, 2410],
+          data: [95500, 120500],
         },
         {
-          label: 'Povprečna neto plača',
+          label: 'Število plač za 50 m²',
+          yAxisID: 'wages',
           backgroundColor: '#eaf300',
-          data: [1130, 1190],
+          data: [84, 101],
         },
       ],
     };
@@ -22,14 +24,18 @@ export default {
     const options = {
       scales: {
         yAxes: [{
+          id: 'price',
+          type: 'linear',
+          position: 'left',
+          ticks: { beginAtZero: true },
+          gridLines: { display: false },
+        }, {
+          id: 'wages',
+          type: 'linear',
+          position: 'right',
           ticks: { beginAtZero: true },
           gridLines: { display: false },
         }],
-      },
-      tooltips: {
-        callbacks: {
-          label: item => `${item.yLabel} €`,
-        },
       },
     };
 
