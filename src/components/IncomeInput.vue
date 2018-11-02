@@ -111,7 +111,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .main {
   align-items: center;
   border: 21px solid #7371fc;
@@ -120,24 +120,24 @@ export default {
   justify-content: center;
   text-align: left;
   width: 100vw;
+}
 
-  .image {
-    display: block;
-    width: 594px;
-  }
+.image {
+  display: block;
+  width: 594px;
+}
 
-  .right {
-    padding-left: 48px;
-    width: 594px;
-    .input {
-      border: none;
-      border-bottom: 7px solid #ddd5ff;
-      display: block;
-      font-size: inherit;
-      width: 100%;
-    }
-  }
+.right {
+  padding-left: 48px;
+  width: 594px;
+}
 
+.input {
+  border: none;
+  border-bottom: 7px solid #ddd5ff;
+  display: block;
+  font-size: inherit;
+  width: 100%;
 }
 
 .explanation {
