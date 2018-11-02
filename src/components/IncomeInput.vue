@@ -47,31 +47,34 @@
       </p>
 
       <h2>Cene rastejo hitreje od plač</h2>
-      <price-vs-wage height="200px" />
+      <price-vs-wage :height="200" />
       <p>Med letoma 2014 in 2017 se je cena m² v Ljubljani v povprečju dvignila za 500 € (26%),
         medtem ko je povprečna  mesečna plača zrasla za 60 € (5%)<sup><a href="#footnote-1">[1]</a></sup>.</p>
 
       <h2>Stanovanja so vse manj dostopna</h2>
-      <price-vs-wage-2 height="200px" />
-      <p>V letu 2014 je bilo treba za stanovanje v velikosti 50 m² v povprečju odšteti 84
-        povprečnih plač, do leta 2017 je ta številka zrasla na 101<sup><a href="#footnote-1">[1]</a></sup>.</p>
+      <div class="two-charts">
+        <yearly-wages-for-50m2 :height="300" year="2014" />
+        <yearly-wages-for-50m2 :height="300" year="2017" />
+      </div>
+      <p>V letu 2014 je bilo možno s povprečno letno plačo kupiti 14,3% stanovanja v velikosti 50 m²,
+        do leta 2017 je ta številka padla na 11,9%<sup><a href="#footnote-1">[1]</a></sup>.</p>
 
       <h2>Gradi se vse manj</h2>
-      <population-vs-built height="200px" />
+      <population-vs-built :height="200" />
       <p>Med letoma 2011 in 2015 je število gospodinjstev naraslo za 5500, medtem ko je bilo
         v tem času zgrajenih le 1677 stanovanj<sup><a href="#footnote-2">[2]</a></sup>.</p>
 
       <h2>In tisto kar se je luksuzno</h2>
-      <built-vs-size height="200px" />
+      <built-vs-size :height="200" />
       <p>Ne samo, da število novogradenj pada, tudi njihova povprečna površina narašča.
         Z drugimi besedami - novozgrajena stanovanja so v vseh pogledih manj dosegljiva
-        povprečnim državljanom.<sup><a href="#footnote-2">[2]</a></sup>
+        povprečnim državljanom.<sup><a href="#footnote-3">[3]</a></sup>
       </p>
 
       <h2>Občina ne naredi dovolj</h2>
-      <municipal-apartments height="200px" />
+      <municipal-apartments :height="200" />
       <p>Kljub temu, da bi Ljubljana po nekaterih podatkih potrebovala 4000 dodatnih
-        neprofitnih stanovanj, je bilo v preteklih petih letih skupaj zgrajenih le 239<sup><a href="#footnote-3">[3]</a></sup><sup><a href="#footnote-4">[4]</a></sup>.
+        neprofitnih stanovanj, je bilo v preteklih petih letih skupaj zgrajenih le 239<sup><a href="#footnote-4">[4]</a></sup><sup><a href="#footnote-5">[5]</a></sup>.
       </p>
 
       <hr>
@@ -79,20 +82,25 @@
       <ol class="sources">
         <li id="footnote-1">
           <a href="http://www.e-prostor.gov.si/fileadmin/etn/Porocila/Letno_porocilo_za_leto_2017.pdf">
-            Poročilo o slovenskem trgu nepremičnin za leto 2017
+            eProstor: Poročilo o slovenskem trgu nepremičnin za leto 2017
           </a>
         </li>
         <li id="footnote-2">
-          <a href="#">
-            MANJKA! (v docu piše samo SURS)
+          <a href="https://pxweb.stat.si/pxweb/dialog/varval.asp?ma=05C4002S&ti=&path=../Database/Dem_soc/05_prebivalstvo/10_stevilo_preb/20_05C40_prebivalstvo_obcine/&xu=&yp=&lang=2">
+            SURS: Prebivalstvo po starosti in spolu, občine, Slovenija, polletno
           </a>
         </li>
         <li id="footnote-3">
+          <a href="https://pxweb.stat.si/pxweb/Dialog/varval.asp?ma=1906903S&ti=&path=../Database/Ekonomsko/19_gradbenistvo/05_19069_graditev_stan/&lang=2">
+            SURS: Ocena dokončanih stanovanj po številu sob in površini, po občinah Slovenije, letno
+          </a>
+        </li>
+        <li id="footnote-4">
           <a href="https://www.rtvslo.si/slovenija/10-000-najemnih-stanovanj-premalo/453222">
             MMC RTVSLO: 10.000 najemnih stanovanj premalo
           </a>
         </li>
-        <li id="footnote-4">
+        <li id="footnote-5">
           <a href="https://www.deloindom.si/stanujem/nepremicninski-trg/financiranje/v-ljubljani-drasticno-pomanjkanje-neprofitnih-stanovanj">
             Delo in Dom: V Ljubljani drastično pomanjkanje neprofitnih stanovanj
           </a>
@@ -107,7 +115,7 @@ import BuiltVsSize from './BuiltVsSize';
 import MunicipalApartments from './MunicipalApartments';
 import PopulationVsBuilt from './PopulationVsBuilt';
 import PriceVsWage from './PriceVsWage';
-import PriceVsWage2 from './PriceVsWage2';
+import YearlyWagesFor50m2 from './YearlyWagesFor50m2';
 import rawApartmentData from '../assets/data.json';
 
 const apartmentData = rawApartmentData.map(apartment => ({
@@ -121,7 +129,7 @@ export default {
     MunicipalApartments,
     PopulationVsBuilt,
     PriceVsWage,
-    PriceVsWage2,
+    YearlyWagesFor50m2,
   },
   data() {
     return {
@@ -221,5 +229,10 @@ export default {
 
   .sources {
     font-size: 18px;
+  }
+
+  .two-charts {
+    display: flex;
+    justify-content: space-between;
   }
 </style>

@@ -1,31 +1,29 @@
-import { Bar } from 'vue-chartjs';
+import { Line } from 'vue-chartjs';
 
 export default {
-  extends: Bar,
+  extends: Line,
   mounted() {
     const data = {
-      labels: ['2014', '2017'],
+      labels: ['2014', '2015', '2016', '2017'],
       datasets: [
         {
           label: 'Cena na m²',
           backgroundColor: '#00aeef',
-          data: [1910, 2410],
+          borderColor: '#00aeef',
+          data: [1910, 2040, 2180, 2410],
+          fill: false,
         },
         {
           label: 'Povprečna neto plača',
           backgroundColor: '#eaf300',
-          data: [1130, 1190],
+          borderColor: '#eaf300',
+          data: [1130, 1140, 1160, 1190],
+          fill: false,
         },
       ],
     };
 
     const options = {
-      scales: {
-        yAxes: [{
-          ticks: { beginAtZero: true },
-          gridLines: { display: false },
-        }],
-      },
       tooltips: {
         callbacks: {
           label: item => `${item.yLabel} €`,
