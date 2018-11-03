@@ -66,15 +66,15 @@
 
       <h2>In tisto kar se je luksuzno</h2>
       <built-vs-size :height="200" />
-      <p>Ne samo, da število novogradenj pada, tudi njihova povprečna površina narašča.
-        Z drugimi besedami - novozgrajena stanovanja so v vseh pogledih manj dosegljiva
-        povprečnim državljanom.<sup><a href="#footnote-3">[3]</a></sup>
+      <p>Stanovanja, ki se gradijo zadnja leta, so v povprečju večja od 100 m² in posledično
+        nedosegljiva večini prebivalcev Ljubljane<sup><a href="#footnote-3">[3]</a></sup>.
       </p>
 
       <h2>Občina ne naredi dovolj</h2>
       <municipal-apartments :height="200" />
-      <p>Kljub temu, da bi Ljubljana po nekaterih podatkih potrebovala 4000 dodatnih
-        neprofitnih stanovanj, je bilo v preteklih petih letih skupaj zgrajenih le 239<sup><a href="#footnote-4">[4]</a></sup><sup><a href="#footnote-5">[5]</a></sup>.
+      <p>Gleda na dolgoletne trende gradnje neprofitnih stanovanj (120 na leto) bo Ljubljana
+        trenutni primanjkljaj 4000 stanovanj odpravila leta 2050<sup><a href="#footnote-4">[4]</a></sup>
+        <sup><a href="#footnote-5">[5]</a></sup>.
       </p>
 
       <hr>
