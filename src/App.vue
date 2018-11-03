@@ -29,7 +29,7 @@ export default {
 * { box-sizing: border-box; }
 body { margin: 0; }
 #app {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 36px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

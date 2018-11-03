@@ -3,20 +3,27 @@
     <div class="landing">
       <img class="image" alt="Logo akcije" src="../assets/logo.png">
       <div class="right">
-        Vnesi plačo in se zjoči:
-        <input
-          class="input"
-          v-model="monthlyIncome"
-          @keydown.enter="moveDown"
-        />
+        Vnesi svojo mesečno plačo in se zjoči:
+        <div class="input-row">
+          <input
+            class="input"
+            v-focus
+            v-model="monthlyIncome"
+            @keydown.enter="moveDown"
+          />
+          <img
+            @click="moveDown"
+            class="confirm"
+            src="/next.png"
+          />
+        </div>
       </div>
     </div>
 
     <div class="container">
       <h2 ref="buying">Nakup</h2>
       <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allApartments }} stanovanj
-        objavljenih na portalu nepremicnine.net
-          <sup><a href="#" @click.prevent="toggleExplanation('buying')">zakaj?</a></sup>,
+        objavljenih na portalu nepremicnine.net<sup><a href="#" @click.prevent="toggleExplanation('buying')">zakaj?</a></sup>,
         pri čemer je povprečna površina stanovanja {{ available.toBuy.averageArea }} m².
         <div
           v-show="explanationVisible.buying"
@@ -32,8 +39,7 @@
 
       <h2 ref="renting">Najem</h2>
       <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allApartments }} stanovanj
-        objavljenih na portalu nepremicnine.net
-          <sup><a href="#" @click.prevent="toggleExplanation('renting')">zakaj?</a></sup>,
+        objavljenih na portalu nepremicnine.net<sup><a href="#" @click.prevent="toggleExplanation('renting')">zakaj?</a></sup>,
         pri čemer je povprečna površina stanovanja {{ available.toRent.averageArea }} m².
         <div
           v-show="explanationVisible.renting"
@@ -84,10 +90,10 @@ export default {
 
       const buyableAverageArea = Math.round(
         buyable.reduce((sum, apartment) => sum + apartment.size, 0) / buyable.length,
-      );
+      ) || 0;
       const rentableAverageArea = Math.round(
         rentable.reduce((sum, apartment) => sum + apartment.size, 0) / rentable.length,
-      );
+      ) || 0;
 
       return {
         toBuy: { count: buyable.length, averageArea: buyableAverageArea },
@@ -116,7 +122,8 @@ export default {
 <style scoped>
 .landing {
   align-items: center;
-  border: 21px solid #7371fc;
+  background: #7371fc;
+  color: white;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -126,21 +133,35 @@ export default {
 
 .image {
   display: block;
-  width: 594px;
+  width: 600px;
 }
 
 .right {
-  padding-left: 48px;
-  width: 594px;
+  padding-left: 64px;
+  width: 514px;
+  line-height: 1.333em;
 }
 
-.input {
-  border: none;
-  border-bottom: 7px solid #ddd5ff;
-  display: block;
-  font-size: inherit;
-  width: 100%;
+.input-row {
+  display: flex;
+  margin-top: 1rem;
 }
+  .input {
+    background: transparent;
+    border: none;
+    border-bottom: 7px solid #eaf300;
+    color: #ffffff;
+    font-size: inherit;
+    flex-basis: 100%;
+    min-width: 0;
+  }
+
+  .confirm {
+    cursor: pointer;
+    height: 72px;
+    margin-left: 18px;
+    width: 72px;
+  }
 
 .explanation {
   font-size: 24px;
