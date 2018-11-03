@@ -1,16 +1,26 @@
 <template>
   <div id="app">
-    <IncomeInput />
+    <income-input />
+
+    <charts />
+
+    <hr>
+    <sources />
+
   </div>
 </template>
 
 <script>
+import Charts from './components/Charts.vue';
 import IncomeInput from './components/IncomeInput.vue';
+import Sources from './components/Sources.vue';
 
 export default {
   name: 'app',
   components: {
+    Charts,
     IncomeInput,
+    Sources,
   },
 };
 </script>
@@ -25,6 +35,11 @@ body { margin: 0; }
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
 }
 
 h2 { text-align: center; }
