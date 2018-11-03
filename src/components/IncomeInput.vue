@@ -56,8 +56,8 @@
         <yearly-wages-for-50m2 :height="300" year="2014" />
         <yearly-wages-for-50m2 :height="300" year="2017" />
       </div>
-      <p>V letu 2014 je bilo možno s povprečno letno plačo kupiti 14,3% stanovanja v velikosti 50 m²,
-        do leta 2017 je ta številka padla na 11,9%<sup><a href="#footnote-1">[1]</a></sup>.</p>
+      <p>Leta 2014 je bilo treba za 50 m² veliko stanovanje odšteti 84 povprečnih plač, leta 2017
+        pa kar 101.<sup><a href="#footnote-1">[1]</a></sup>.</p>
 
       <h2>Gradi se vse manj</h2>
       <population-vs-built :height="200" />
