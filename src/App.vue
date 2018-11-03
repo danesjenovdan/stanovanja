@@ -38,7 +38,8 @@ body { margin: 0; }
 }
 
 .container {
-  width: 960px;
+  width: 1280px;
+  padding: 0 5px;
   margin: 0 auto;
 }
 

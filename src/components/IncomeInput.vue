@@ -14,7 +14,7 @@
           <img
             @click="moveDown"
             class="confirm"
-            src="/next.png"
+            src="/next.svg"
           />
         </div>
       </div>
