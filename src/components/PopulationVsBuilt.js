@@ -12,6 +12,7 @@ export default {
           backgroundColor: '#eaf300',
           borderColor: '#eaf300',
           data: [1561, 830, 464, 716, 150, 130, 432, 249, 171, 188],
+          borderWidth: 10,
           type: 'line',
           fill: false,
         },

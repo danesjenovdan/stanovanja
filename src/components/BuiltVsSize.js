@@ -11,6 +11,7 @@ export default {
           yAxisID: 'average_size',
           backgroundColor: '#7371fc',
           borderColor: '#7371fc',
+          borderWidth: 10,
           data: [73, 104, 101, 92, 177, 179, 100, 121, 177, 122],
           fill: false,
           type: 'line',
