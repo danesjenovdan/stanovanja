@@ -14,7 +14,7 @@
           <img
             @click="moveDown"
             class="confirm"
-            src="/next.svg"
+            src="next.svg"
           />
         </div>
       </div>
@@ -23,7 +23,7 @@
     <div class="container">
       <div class="circle-text">
         <div class="circle">
-          <img class="image" src="/buy.svg" />
+          <img class="image" src="buy.svg" />
         </div>
         <div class="text">
           <h2 class="fancy-title" ref="buying">Nakup</h2>
@@ -47,7 +47,7 @@
 
       <div class="circle-text">
         <div class="circle">
-          <img class="image" src="/rent.svg" />
+          <img class="image" src="rent.svg" />
         </div>
         <div class="text">
           <h2 class="fancy-title" ref="renting">Najem</h2>
