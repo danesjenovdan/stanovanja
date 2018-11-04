@@ -48,7 +48,7 @@ export default {
 
       return {
         facebook: `${FACEBOOK_BASE_URL}&redirect_uri=${link}&link=${link}&ref=responsive&name=${title}`,
-        twitter: `${TWITTER_BASE_URL}?text=${encodeURIComponent(`${text} ${hashtags} ${link}`)}`,
+        twitter: `${TWITTER_BASE_URL}?text=${encodeURIComponent(`${text} ${hashtags} ${document.location.href}`)}`,
         email: `mailto:?subject=${title}&body=${text} ${link}`,
       };
     },

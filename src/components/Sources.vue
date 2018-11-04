@@ -29,7 +29,7 @@
       </li>
     </ol>
 
-    <p>Raziskavo je pripravil Inštitut za študije stanovanj in prostora v sodelovanju s Fakulteto za družbene vede in Inštitutom za politike prostora.</p>
+    <p><a target="_blank" href="raziskava.pdf">Raziskavo</a> je pripravil Inštitut za študije stanovanj in prostora v sodelovanju s Fakulteto za družbene vede in Inštitutom za politike prostora.</p>
   </div>
 </template>
 
