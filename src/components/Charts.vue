@@ -12,8 +12,10 @@
     <hr>
 
     <h2 class="fancy-title">Stanovanja so vse manj dostopna</h2>
-    <div class="chart-container">
-      <wages-for-50m2 class="chart" :width="2" :height="1" />
+    <div class="scroll-fade">
+      <div class="chart-container">
+        <wages-for-50m2 class="chart" :width="2" :height="1" />
+      </div>
     </div>
     <p>Leta 2014 je bilo treba za 50 m² veliko stanovanje v Ljubljani odšteti <b>84 povprečnih plač</b>, leta 2017
       pa že kar <b>101</b>.<sup><a href="#footnote-1">[1]</a></sup></p>
@@ -21,8 +23,10 @@
     <hr>
 
     <h2 class="fancy-title">Gradi se vse manj</h2>
-    <div class="chart-container">
-      <population-vs-built class="chart" :width="2" :height="1" />
+    <div class="scroll-fade">
+      <div class="chart-container">
+        <population-vs-built class="chart" :width="2" :height="1" />
+      </div>
     </div>
     <p>Med letoma 2011 in 2015 je število ljubljanskih gospodinjstev naraslo za <b>5500</b>, medtem ko je bilo
       v tem času zgrajenih le <b>1677</b> stanovanj.<sup><a href="#footnote-2">[2]</a></sup></p>
@@ -30,8 +34,10 @@
     <hr>
 
     <h2 class="fancy-title">Tisto, kar se gradi, je luksuzno</h2>
-    <div class="chart-container">
-      <built-vs-size class="chart" :width="2" :height="1" />
+    <div class="scroll-fade">
+      <div class="chart-container">
+        <built-vs-size class="chart" :width="2" :height="1" />
+      </div>
     </div>
     <p>Stanovanja, ki se gradijo zadnja leta, so v povprečju <b>večja od 100 m²</b> in posledično
       nedosegljiva večini prebivalcev Ljubljane.<sup><a href="#footnote-3">[3]</a></sup>
@@ -40,8 +46,10 @@
     <hr>
 
     <h2 class="fancy-title">Občina ne naredi dovolj</h2>
-    <div class="chart-container">
-      <municipal-apartments class="chart" :width="2" :height="1" />
+    <div class="scroll-fade">
+      <div class="chart-container">
+        <municipal-apartments class="chart" :width="2" :height="1" />
+      </div>
     </div>
     <p>Glede na dolgoletne trende gradnje neprofitnih stanovanj (120 na leto) bo Ljubljana
       trenutni primanjkljaj 4000 stanovanj odpravila <b>leta 2050</b>.<sup><a href="#footnote-4">[4]</a></sup>
