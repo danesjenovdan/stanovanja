@@ -27,7 +27,7 @@
         </div>
         <div class="text">
           <h2 class="fancy-title" ref="buying">Nakup</h2>
-          <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allApartments }} stanovanj
+          <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allBuyableApartments }} stanovanj
             objavljenih na portalu nepremicnine.net, pri čemer je povprečna površina stanovanja
             {{ available.toBuy.averageArea }} m².
             <a href="#" @click.prevent="toggleExplanation('buying')">Zakaj?</a>
@@ -51,7 +51,7 @@
         </div>
         <div class="text">
           <h2 class="fancy-title" ref="renting">Najem</h2>
-          <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allApartments }} stanovanj
+          <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allRentableApartments }} stanovanj
             objavljenih na portalu nepremicnine.net, pri čemer je povprečna površina stanovanja
             {{ available.toRent.averageArea }} m².
             <a href="#" @click.prevent="toggleExplanation('renting')">Zakaj?</a>
@@ -61,8 +61,6 @@
             >
               Predpostavili smo, da si pripravljeni plačevati mesečno najemnino v višini
               ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
-              Če bi se vsa stanovanja oddajala po 13 €/m², kolikor je ljubljansko povprečje,
-              si lahko torej privoščiš stanovanje veliko največ {{ rentableArea }} m².
             </div>
           </p>
         </div>
@@ -72,18 +70,16 @@
 </template>
 
 <script>
-import rawApartmentData from '../assets/data.json';
-
-const apartmentData = rawApartmentData.map(apartment => ({
-  ...apartment, rent: apartment.size * 13,
-}));
+import buyingData from '../assets/buy.json';
+import rentingData from '../assets/rent.json';
 
 export default {
   name: 'IncomeInput',
   data() {
     return {
       monthlyIncome: 1083,
-      allApartments: apartmentData.length,
+      allBuyableApartments: buyingData.length,
+      allRentableApartments: rentingData.length,
       explanationVisible: {
         buying: false,
         renting: false,
@@ -94,15 +90,12 @@ export default {
     monthlyInstallment() {
       return this.monthlyIncome * 1 / 3;
     },
-    rentableArea() {
-      return Math.round(this.monthlyInstallment / 13);
-    },
     purchasingPower() {
       return this.monthlyInstallment * 12 * 14.457;
     },
     available() {
-      const buyable = apartmentData.filter(apartment => apartment.price <= this.purchasingPower);
-      const rentable = apartmentData.filter(apartment => apartment.size <= this.rentableArea);
+      const buyable = buyingData.filter(apartment => apartment.price <= this.purchasingPower);
+      const rentable = rentingData.filter(apartment => apartment.price <= this.monthlyInstallment);
 
       const buyableAverageArea = Math.round(
         buyable.reduce((sum, apartment) => sum + apartment.size, 0) / buyable.length,
