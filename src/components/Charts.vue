@@ -24,7 +24,7 @@
 
     <hr>
 
-    <h2 class="fancy-title">In tisto kar se je luksuzno</h2>
+    <h2 class="fancy-title">Tisto, kar se gradi, je luksuzno</h2>
     <built-vs-size class="chart" :height="200" />
     <p>Stanovanja, ki se gradijo zadnja leta, so v povprečju večja od 100 m² in posledično
       nedosegljiva večini prebivalcev Ljubljane<sup><a href="#footnote-3">[3]</a></sup>.

@@ -29,7 +29,7 @@
       </li>
     </ol>
 
-    <p>Raziskavo so pripravili študentje Ime Priimek, Ime Priimek, Ime Priimek pod vodstvom Ime Priimek. Celotna raziskava je dostopna tukaj.</p>
+    <p>Raziskavo je pripravil Inštitut za študije stanovanj in prostora v sodelovanju s Fakulteto za družbene vede in Inštitutom za politike prostora.</p>
   </div>
 </template>
 
