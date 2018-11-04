@@ -40,8 +40,8 @@ export default {
   computed: {
     links() {
       const link = encodeURIComponent(document.location.href);
-      const title = encodeURIComponent('Stanovanje = Sanje?');
-      const text = 'MANJKAAAA!!!';
+      const title = encodeURIComponent('Stanovanje = sanje? Stanje stanovanjske politike v prestolnici.');
+      const text = 'Stanovanjska scena v prestolnici je za zjokat. Preveri, kaj si lahko s svojo plačo privoščiš ti in kako ti pri tem pomaga stanovanjska politika MOL!';
       const hashtags = '#stanovanjesanje';
       const FACEBOOK_BASE_URL = 'https://www.facebook.com/dialog/feed?app_id=301375193309601';
       const TWITTER_BASE_URL = 'https://twitter.com/intent/tweet';

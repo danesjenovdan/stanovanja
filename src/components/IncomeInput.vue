@@ -3,7 +3,7 @@
     <div class="landing">
       <img class="image" alt="Logo akcije" src="../assets/logo.png">
       <div class="right">
-        Vnesi svojo mesečno plačo in se zjoči:
+        Vnesi svojo mesečno neto plačo in se zjoči:
         <div class="input-row">
           <input
             class="input"
@@ -27,19 +27,19 @@
         </div>
         <div class="text">
           <h2 class="fancy-title" ref="buying">Nakup</h2>
-          <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allBuyableApartments }} stanovanj
-            v Ljubljani, ki so bila 2. novembra objavljena na portalu nepremicnine.net, pri čemer je
-            povprečna površina stanovanja {{ available.toBuy.averageArea }} m².
+          <p>S svojo plačo lahko kupiš <b>{{ available.toBuy.count }}</b> od <b>{{ allBuyableApartments }}</b> stanovanj
+            v Ljubljani, ki so bila 2. 11. 2018 objavljena na portalu nepremicnine.net, pri čemer je
+            povprečna površina stanovanja <b>{{ available.toBuy.averageArea }} m²</b>.
             <a href="#" @click.prevent="toggleExplanation('buying')">Zakaj?</a>
             <div
               v-show="explanationVisible.buying"
               class="explanation"
             >
-              Predpostavili smo, da si pripravljeni plačevati mesečni obrok v višini
-              ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
+              Predpostavljamo, da lahko plačuješ mesečni obrok v višini
+              ⅓ navedenega dohodka, kar znaša <b>{{ formatPrice(monthlyInstallment) }}</b>.
               Če bi najel kredit za 19 let po 2,9% obrestni meri (slovensko
               povprečje), bi bil končni znesek, ki ga prejmeš od banke,
-              {{ formatPrice(purchasingPower) }}.
+              <b>{{ formatPrice(purchasingPower) }}</b>.
             </div>
           </p>
         </div>
@@ -51,16 +51,16 @@
         </div>
         <div class="text">
           <h2 class="fancy-title" ref="renting">Najem</h2>
-          <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allRentableApartments }} stanovanj
+          <p>S svojo plačo lahko najameš <b>{{ available.toRent.count }}</b> od <b>{{ allRentableApartments }}</b> stanovanj
             v Ljubljani, ki so bila 2. novembra objavljena na portalu nepremicnine.net, pri čemer je
-            povprečna površina stanovanja {{ available.toRent.averageArea }} m².
+            povprečna površina stanovanja <b>{{ available.toRent.averageArea }} m²</b>.
             <a href="#" @click.prevent="toggleExplanation('renting')">Zakaj?</a>
             <div
               v-show="explanationVisible.renting"
               class="explanation"
             >
-              Predpostavili smo, da si pripravljeni plačevati mesečno najemnino v višini
-              ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
+              Predpostavljamo, da lahko plačuješ mesečno najemnino v višini
+              ⅓ navedenega dohodka, kar znaša <b>{{ formatPrice(monthlyInstallment) }}</b>.
             </div>
           </p>
         </div>
