@@ -28,8 +28,8 @@
         <div class="text">
           <h2 class="fancy-title" ref="buying">Nakup</h2>
           <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allBuyableApartments }} stanovanj
-            objavljenih na portalu nepremicnine.net, pri čemer je povprečna površina stanovanja
-            {{ available.toBuy.averageArea }} m².
+            v Ljubljani, ki so bila 2. novembra objavljena na portalu nepremicnine.net, pri čemer je
+            povprečna površina stanovanja {{ available.toBuy.averageArea }} m².
             <a href="#" @click.prevent="toggleExplanation('buying')">Zakaj?</a>
             <div
               v-show="explanationVisible.buying"
@@ -52,8 +52,8 @@
         <div class="text">
           <h2 class="fancy-title" ref="renting">Najem</h2>
           <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allRentableApartments }} stanovanj
-            objavljenih na portalu nepremicnine.net, pri čemer je povprečna površina stanovanja
-            {{ available.toRent.averageArea }} m².
+            v Ljubljani, ki so bila 2. novembra objavljena na portalu nepremicnine.net, pri čemer je
+            povprečna površina stanovanja {{ available.toRent.averageArea }} m².
             <a href="#" @click.prevent="toggleExplanation('renting')">Zakaj?</a>
             <div
               v-show="explanationVisible.renting"
