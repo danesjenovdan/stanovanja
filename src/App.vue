@@ -34,7 +34,7 @@ export default {
 <style>
 * { box-sizing: border-box; }
 html, body {
-  font-size: 36px;
+  font-size: 24px;
   margin: 0;
 }
 #app {
@@ -46,8 +46,8 @@ html, body {
 }
 
 .container {
-  width: 1280px;
-  padding: 0 5px;
+  max-width: 1280px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -56,26 +56,33 @@ h2 {
   margin: 0;
 }
 .fancy-title {
-  border-bottom: 20px solid #7371fc;
-  line-height: 31px;
-  display: inline-block;
-  padding: 0px 11px;
-  margin-left: -11px;
+  background-image: linear-gradient(to right, #7371fc 0%, #7371fc 100%);
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 100% 0.555rem;
+  display: inline;
 }
+.fancy-title::before { content: '\00a0'; }
+.fancy-title::after { content: '\00a0'; }
 
 p { margin: 0; }
 
 sup { line-height: 1em; }
 
 hr {
-  width: 349px;
-  height: 15px;
+  max-width: 349px;
+  height: 0.444rem;
   background: #eaf300;
   border: none;
-  margin: 150px auto;
+  margin: 4rem auto;
 }
 
 a {
   color: #7371fc;
+}
+
+@media (min-width: 992px) {
+  html, body { font-size: 36px; }
+  .fancy-title { margin-left: -0.3rem; }
 }
 </style>

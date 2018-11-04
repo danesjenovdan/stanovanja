@@ -134,31 +134,33 @@ export default {
   background: #7371fc;
   color: white;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
   text-align: left;
   width: 100%;
+  padding: 24px;
 }
 
   .landing .image {
     display: block;
-    width: 600px;
+    width: 100%;
   }
 
   .right {
-    padding-left: 64px;
-    width: 514px;
-    line-height: 1.333em;
+    line-height: 1.33em;
+    max-width: 100%;
   }
 
   .input-row {
     display: flex;
     margin-top: 1rem;
   }
+
   .input {
     background: transparent;
     border: none;
-    border-bottom: 7px solid #eaf300;
+    border-bottom: 0.2rem solid #eaf300;
     color: #ffffff;
     font-size: inherit;
     flex-basis: 100%;
@@ -167,23 +169,25 @@ export default {
 
   .confirm {
     cursor: pointer;
-    height: 72px;
-    margin-left: 18px;
-    width: 72px;
+    height: 2rem;
+    margin-left: 0.5rem;
+    width: 2rem;
   }
 
 .circle-text {
+  align-items: center;
   display: flex;
-  margin-top: 114px;
+  margin-top: 2rem;
+  flex-direction: column;
+  text-align: center;
 }
-  .circle-text:first-child { margin-top: 120px; }
 
   .circle-text .circle {
     width: 226px;
     height: 226px;
     border-radius: 50%;
     background: #eaf300;
-    margin-right: 70px;
+    margin-bottom: 1rem;
   }
 
     .circle-text .circle .image {
@@ -194,17 +198,33 @@ export default {
 
   .circle-text .text {
     flex: 1;
-    line-height: 48px;
+    line-height: 1.5rem;
   }
-
-  .circle-text h2 {
-    margin-top: 32px;
-  }
-
 
 .explanation {
-  font-size: 24px;
+  font-size: 0.666rem;
   margin-top: 2em;
   line-height: 1.5em;
 }
-</style>
+
+@media (min-width: 992px) {
+  .landing { flex-direction: row; }
+
+    .landing .right {
+      padding-left: 64px;
+      width: 514px;
+    }
+
+    .landing .image { width: 600px; }
+
+  .circle-text {
+    flex-direction: row;
+    margin-top: 3rem;
+    text-align: left;
+  }
+
+    .circle-text .circle {
+      margin: 0 70px 0 0;
+    }
+
+}</style>
