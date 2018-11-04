@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <h2 class="fancy-title">Cene rastejo hitreje od plač</h2>
-    <div class="chart-container">
-      <price-vs-wage class="chart" :width="2" :height="1" />
+    <div class="scroll-fade">
+      <div class="chart-container">
+        <price-vs-wage class="chart" :width="2" :height="1" />
+      </div>
     </div>
     <p>Med letoma 2014 in 2017 se je cena kvadratnega metra v Ljubljani v povprečju dvignila za <b>500 €</b> (26 %),
       medtem ko je povprečna mesečna plača zrasla za <b>60 €</b> (5 %).<sup><a href="#footnote-1">[1]</a></sup></p>
@@ -75,4 +77,22 @@ export default {
 .chart-container { overflow-x: auto; }
 
   .chart-container .chart { min-width: 450px; }
+
+@media (max-width: 991px) {
+  .chart { padding-right: 40px; }
+
+  .scroll-fade {
+    position: relative;
+  }
+  .scroll-fade::before {
+    content: '';
+    height: 100%;
+    width: 40px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    z-index: 1;
+  }
+}
 </style>
