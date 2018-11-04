@@ -8,7 +8,7 @@ export default {
       datasets: [
         {
           label: 'Gradnja občinskih stanovanj',
-          backgroundColor: ['#00aeef', '#00aeef', '#00aeef', '#00aeef', '#00aeef', '#eaf300'],
+          backgroundColor: ['#7371fc', '#7371fc', '#7371fc', '#7371fc', '#7371fc', '#eaf300'],
           data: [5, 15, 142, 16, 61, 4000],
         },
       ],

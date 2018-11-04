@@ -1,6 +1,6 @@
 <template functional>
   <div class="container">
-    Viri:
+    <h2>Viri</h2>
     <ol class="sources">
       <li id="footnote-1">
         <a href="http://www.e-prostor.gov.si/fileadmin/etn/Porocila/Letno_porocilo_za_leto_2017.pdf">
@@ -28,9 +28,21 @@
         </a>
       </li>
     </ol>
+
+    <p>Raziskavo so pripravili študentje Ime Priimek, Ime Priimek, Ime Priimek pod vodstvom Ime Priimek. Celotna raziskava je dostopna tukaj.</p>
   </div>
 </template>
 
 <style scoped>
-.sources { font-size: 18px; }
+.sources {
+  font-size: 24px;
+  line-height: 1.66em;
+  padding-left: 1em;
+  margin: 2.5em 0 3em;
+}
+
+p {
+  line-height: 1.333em;
+  margin-bottom: 3.25em;
+}
 </style>

@@ -8,8 +8,8 @@ export default {
       datasets: [
         {
           label: 'Cena na m²',
-          backgroundColor: '#00aeef',
-          borderColor: '#00aeef',
+          backgroundColor: '#7371fc',
+          borderColor: '#7371fc',
           data: [1910, 2040, 2180, 2410],
           fill: false,
         },

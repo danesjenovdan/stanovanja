@@ -21,36 +21,52 @@
     </div>
 
     <div class="container">
-      <h2 ref="buying">Nakup</h2>
-      <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allApartments }} stanovanj
-        objavljenih na portalu nepremicnine.net<sup><a href="#" @click.prevent="toggleExplanation('buying')">zakaj?</a></sup>,
-        pri čemer je povprečna površina stanovanja {{ available.toBuy.averageArea }} m².
-        <div
-          v-show="explanationVisible.buying"
-          class="explanation"
-        >
-          Predpostavili smo, da si pripravljeni plačevati mesečni obrok v višini
-          ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
-          Če bi najel kredit za 19 let po 2,9% obrestni meri (slovensko
-          povprečje), bi bil končni znesek, ki ga prejmeš od banke,
-          {{ formatPrice(purchasingPower) }}.
+      <div class="circle-text">
+        <div class="circle">
+          <img class="image" src="/buy.svg" />
         </div>
-      </p>
+        <div class="text">
+          <h2 class="fancy-title" ref="buying">Nakup</h2>
+          <p>S svojo plačo lahko kupiš {{ available.toBuy.count }} od {{ allApartments }} stanovanj
+            objavljenih na portalu nepremicnine.net, pri čemer je povprečna površina stanovanja
+            {{ available.toBuy.averageArea }} m².
+            <a href="#" @click.prevent="toggleExplanation('buying')">Zakaj?</a>
+            <div
+              v-show="explanationVisible.buying"
+              class="explanation"
+            >
+              Predpostavili smo, da si pripravljeni plačevati mesečni obrok v višini
+              ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
+              Če bi najel kredit za 19 let po 2,9% obrestni meri (slovensko
+              povprečje), bi bil končni znesek, ki ga prejmeš od banke,
+              {{ formatPrice(purchasingPower) }}.
+            </div>
+          </p>
+        </div>
+      </div>
 
-      <h2 ref="renting">Najem</h2>
-      <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allApartments }} stanovanj
-        objavljenih na portalu nepremicnine.net<sup><a href="#" @click.prevent="toggleExplanation('renting')">zakaj?</a></sup>,
-        pri čemer je povprečna površina stanovanja {{ available.toRent.averageArea }} m².
-        <div
-          v-show="explanationVisible.renting"
-          class="explanation"
-        >
-          Predpostavili smo, da si pripravljeni plačevati mesečno najemnino v višini
-          ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
-          Če bi se vsa stanovanja oddajala po 13 €/m², kolikor je ljubljansko povprečje,
-          si lahko torej privoščiš stanovanje veliko največ {{ rentableArea }} m².
+      <div class="circle-text">
+        <div class="circle">
+          <img class="image" src="/rent.svg" />
         </div>
-      </p>
+        <div class="text">
+          <h2 class="fancy-title" ref="renting">Najem</h2>
+          <p>S svojo plačo lahko najameš {{ available.toRent.count }} od {{ allApartments }} stanovanj
+            objavljenih na portalu nepremicnine.net, pri čemer je povprečna površina stanovanja
+            {{ available.toRent.averageArea }} m².
+            <a href="#" @click.prevent="toggleExplanation('renting')">Zakaj?</a>
+            <div
+              v-show="explanationVisible.renting"
+              class="explanation"
+            >
+              Predpostavili smo, da si pripravljeni plačevati mesečno najemnino v višini
+              ⅓ navedenega dohodka, kar znaša {{ formatPrice(monthlyInstallment) }}.
+              Če bi se vsa stanovanja oddajala po 13 €/m², kolikor je ljubljansko povprečje,
+              si lahko torej privoščiš stanovanje veliko največ {{ rentableArea }} m².
+            </div>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -131,21 +147,21 @@ export default {
   width: 100%;
 }
 
-.image {
-  display: block;
-  width: 600px;
-}
+  .landing .image {
+    display: block;
+    width: 600px;
+  }
 
-.right {
-  padding-left: 64px;
-  width: 514px;
-  line-height: 1.333em;
-}
+  .right {
+    padding-left: 64px;
+    width: 514px;
+    line-height: 1.333em;
+  }
 
-.input-row {
-  display: flex;
-  margin-top: 1rem;
-}
+  .input-row {
+    display: flex;
+    margin-top: 1rem;
+  }
   .input {
     background: transparent;
     border: none;
@@ -163,9 +179,39 @@ export default {
     width: 72px;
   }
 
+.circle-text {
+  display: flex;
+  margin-top: 114px;
+}
+  .circle-text:first-child { margin-top: 120px; }
+
+  .circle-text .circle {
+    width: 226px;
+    height: 226px;
+    border-radius: 50%;
+    background: #eaf300;
+    margin-right: 70px;
+  }
+
+    .circle-text .circle .image {
+      width: 125px;
+      height: 125px;
+      margin: 51px 50px 50px 51px;
+    }
+
+  .circle-text .text {
+    flex: 1;
+    line-height: 48px;
+  }
+
+  .circle-text h2 {
+    margin-top: 32px;
+  }
+
+
 .explanation {
   font-size: 24px;
-  color: #666;
-  margin-top: 48px;
+  margin-top: 2em;
+  line-height: 1.5em;
 }
 </style>

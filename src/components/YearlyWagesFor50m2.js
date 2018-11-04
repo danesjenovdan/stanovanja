@@ -13,7 +13,7 @@ export default {
       datasets: [
         {
           label: 'Cena za 50 m²',
-          backgroundColor: ['#00aeef', '#eaf300'],
+          backgroundColor: ['#7371fc', '#eaf300'],
           data: [rawData[this.year].percentage, 100 - rawData[this.year].percentage],
         },
       ],

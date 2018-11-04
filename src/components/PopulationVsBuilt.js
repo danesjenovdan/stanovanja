@@ -18,7 +18,7 @@ export default {
         {
           label: 'Prebivalstvo Ljubljane',
           yAxisID: 'population',
-          backgroundColor: '#00aeef',
+          backgroundColor: '#7371fc',
           data: [267760, 276091, 279653, 280140, 280607, 282994, 285857, 287218, 288307, 288919],
         },
       ],

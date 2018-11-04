@@ -9,8 +9,8 @@ export default {
         {
           label: 'Povprečna velikost v m²',
           yAxisID: 'average_size',
-          backgroundColor: '#00aeef',
-          borderColor: '#00aeef',
+          backgroundColor: '#7371fc',
+          borderColor: '#7371fc',
           data: [73, 104, 101, 92, 177, 179, 100, 121, 177, 122],
           fill: false,
           type: 'line',
