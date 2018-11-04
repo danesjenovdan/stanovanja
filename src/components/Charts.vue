@@ -4,8 +4,8 @@
     <div class="chart-container">
       <price-vs-wage class="chart" :width="2" :height="1" />
     </div>
-    <p>Med letoma 2014 in 2017 se je cena kvadratnega metra v Ljubljani v povprečju dvignila za <b>500 €</b> (26%),
-      medtem ko je povprečna  mesečna plača zrasla za <b>60 €</b> (5%)<sup><a href="#footnote-1">[1]</a></sup>.</p>
+    <p>Med letoma 2014 in 2017 se je cena kvadratnega metra v Ljubljani v povprečju dvignila za <b>500 €</b> (26 %),
+      medtem ko je povprečna mesečna plača zrasla za <b>60 €</b> (5 %).<sup><a href="#footnote-1">[1]</a></sup></p>
 
     <hr>
 
@@ -14,7 +14,7 @@
       <wages-for-50m2 class="chart" :width="2" :height="1" />
     </div>
     <p>Leta 2014 je bilo treba za 50 m² veliko stanovanje v Ljubljani odšteti <b>84 povprečnih plač</b>, leta 2017
-      pa že kar <b>101</b><sup><a href="#footnote-1">[1]</a></sup>.</p>
+      pa že kar <b>101</b>.<sup><a href="#footnote-1">[1]</a></sup></p>
 
     <hr>
 
@@ -23,7 +23,7 @@
       <population-vs-built class="chart" :width="2" :height="1" />
     </div>
     <p>Med letoma 2011 in 2015 je število ljubljanskih gospodinjstev naraslo za <b>5500</b>, medtem ko je bilo
-      v tem času zgrajenih le <b>1677</b> stanovanj<sup><a href="#footnote-2">[2]</a></sup>.</p>
+      v tem času zgrajenih le <b>1677</b> stanovanj.<sup><a href="#footnote-2">[2]</a></sup></p>
 
     <hr>
 
@@ -32,7 +32,7 @@
       <built-vs-size class="chart" :width="2" :height="1" />
     </div>
     <p>Stanovanja, ki se gradijo zadnja leta, so v povprečju <b>večja od 100 m²</b> in posledično
-      nedosegljiva večini prebivalcev Ljubljane<sup><a href="#footnote-3">[3]</a></sup>.
+      nedosegljiva večini prebivalcev Ljubljane.<sup><a href="#footnote-3">[3]</a></sup>
     </p>
 
     <hr>
@@ -42,8 +42,8 @@
       <municipal-apartments class="chart" :width="2" :height="1" />
     </div>
     <p>Glede na dolgoletne trende gradnje neprofitnih stanovanj (120 na leto) bo Ljubljana
-      trenutni primanjkljaj 4000 stanovanj odpravila <b>leta 2050</b><sup><a href="#footnote-4">[4]</a></sup>
-      <sup><a href="#footnote-5">[5]</a></sup>.
+      trenutni primanjkljaj 4000 stanovanj odpravila <b>leta 2050</b>.<sup><a href="#footnote-4">[4]</a></sup>
+      <sup><a href="#footnote-5">[5]</a></sup>
     </p>
   </div>
 </template>

@@ -7,6 +7,7 @@
         <div class="input-row">
           <input
             class="input"
+            type="number"
             v-focus
             v-model="monthlyIncome"
             @keydown.enter="moveDown"
@@ -37,7 +38,7 @@
             >
               Predpostavljamo, da lahko plačuješ mesečni obrok v višini
               ⅓ navedenega dohodka, kar znaša <b>{{ formatPrice(monthlyInstallment) }}</b>.
-              Če bi najel kredit za 19 let po 2,9% obrestni meri (slovensko
+              Če bi najel kredit za 19 let po 2,9 % obrestni meri (slovensko
               povprečje), bi bil končni znesek, ki ga prejmeš od banke,
               <b>{{ formatPrice(purchasingPower) }}</b>.
             </div>
@@ -52,7 +53,7 @@
         <div class="text">
           <h2 class="fancy-title" ref="renting">Najem</h2>
           <p>S svojo plačo lahko najameš <b>{{ available.toRent.count }}</b> od <b>{{ allRentableApartments }}</b> stanovanj
-            v Ljubljani, ki so bila 2. novembra objavljena na portalu nepremicnine.net, pri čemer je
+            v Ljubljani, ki so bila 2. 11. 2018 objavljena na portalu nepremicnine.net, pri čemer je
             povprečna površina stanovanja <b>{{ available.toRent.averageArea }} m²</b>.
             <a href="#" @click.prevent="toggleExplanation('renting')">Zakaj?</a>
             <div
@@ -165,6 +166,13 @@ export default {
     font-size: inherit;
     flex-basis: 100%;
     min-width: 0;
+    outline: none;
+     -moz-appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   .confirm {
