@@ -3,7 +3,7 @@
     <div class="landing">
       <img class="image" alt="Logo akcije" src="../assets/logo.png">
       <div class="right">
-        Vnesi svojo mesečno neto plačo in se zjoči:
+        Vnesi svoj mesečni neto dohodek in se zjoči:
         <div class="input-row">
           <input
             class="input"
@@ -37,8 +37,14 @@
               class="explanation"
             >
               Predpostavljamo, da lahko plačuješ mesečni obrok v višini
-              ⅓ navedenega dohodka, kar znaša <b>{{ formatPrice(monthlyInstallment) }}</b>.
-              Če bi najel kredit za 19 let po 2,9 % obrestni meri (slovensko
+              <span
+                class="tooltiper"
+                v-tooltip="tretjineTooltipOptions"
+              >⅓ navedenega dohodka</span>, kar znaša <b>{{ formatPrice(monthlyInstallment) }}</b>.
+              Če bi najel kredit za <span
+                class="tooltiper"
+                v-tooltip="kreditTooltipOptions"
+              >19 let po 2,9 % obrestni meri</span> (slovensko
               povprečje), bi bil končni znesek, ki ga prejmeš od banke,
               <b>{{ formatPrice(purchasingPower) }}</b>.
             </div>
@@ -52,16 +58,20 @@
         </div>
         <div class="text">
           <h2 class="fancy-title" ref="renting">Najem</h2>
-          <p>S svojo plačo lahko najameš <b>{{ available.toRent.count }}</b> od <b>{{ allRentableApartments }}</b> stanovanj
-            v Ljubljani, ki so bila 2. 11. 2018 objavljena na portalu nepremicnine.net, pri čemer je
+          <p>S svojo plačo lahko najameš <b>{{ available.toRent.count }}</b>
+            od <b>{{ allRentableApartments }}</b> stanovanj v Ljubljani, ki so bila 2. 11. 2018
+            objavljena na portalu nepremicnine.net, pri čemer je
             povprečna površina stanovanja <b>{{ available.toRent.averageArea }} m²</b>.
             <a href="#" @click.prevent="toggleExplanation('renting')">Zakaj?</a>
             <div
               v-show="explanationVisible.renting"
               class="explanation"
             >
-              Predpostavljamo, da lahko plačuješ mesečno najemnino v višini
-              ⅓ navedenega dohodka, kar znaša <b>{{ formatPrice(monthlyInstallment) }}</b>.
+              Predpostavljamo, da lahko plačuješ mesečno najemnino <span
+                class="tooltiper"
+                v-tooltip="tretjineTooltipOptions"
+              >v višini ⅓ navedenega dohodka</span>,
+              kar znaša <b>{{ formatPrice(monthlyInstallment) }}</b>.
             </div>
           </p>
         </div>
@@ -71,11 +81,19 @@
 </template>
 
 <script>
+import { VTooltip, VPopover, VClosePopover } from 'v-tooltip'
 import buyingData from '../assets/buy.json';
 import rentingData from '../assets/rent.json';
 
 export default {
   name: 'IncomeInput',
+  components: {
+    'v-popover': VPopover,
+  },
+  directives: {
+    tooltip: VTooltip,
+    'close-popover': VClosePopover,
+  },
   data() {
     return {
       monthlyIncome: 1083,
@@ -84,6 +102,20 @@ export default {
       explanationVisible: {
         buying: false,
         renting: false,
+      },
+      tretjineTooltipOptions: {
+        content: 'Pravilo tretjine je <a target="_blank" href="https://shelterforce.org/2017/04/25/defense-30-percent-standard-cases/">splošno sprejeto merilo dostopnosti stanovanj</a>, ki pravi, da izdatki za stanovanje ne smejo preseči tretjino dohodkov gospodinjstva.',
+        trigger: 'click',
+        popover: {
+          defaultPlacement: 'top',
+        },
+      },
+      kreditTooltipOptions: {
+        content: 'Trajanje kredita in obrestna mera sta izbrana glede na <a target="_blank" href="https://bankaslovenije.blob.core.windows.net/publication-files/gdgggdieQjeQhhhh_fsr_junij_2018_lektorirano.pdf">poročilo o finančni stabilnosti</a>, kjer sta navedeni povprečna ročnost in obrestna mera stanovanjskega posojila v Sloveniji za leto 2018.',
+        trigger: 'click',
+        popover: {
+          defaultPlacement: 'bottom',
+        },
       },
     };
   },
@@ -129,7 +161,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .landing {
   align-items: center;
   background: #7371fc;
@@ -213,6 +245,11 @@ export default {
   font-size: 0.666rem;
   margin-top: 2em;
   line-height: 1.5em;
+
+  .tooltiper {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 992px) {
@@ -235,4 +272,96 @@ export default {
       margin: 0 70px 0 0;
     }
 
-}</style>
+}
+</style>
+
+<style lang="scss">
+.tooltip {
+  display: block !important;
+  max-width: 300px;
+  z-index: 10000;
+  font-family: 'Barlow', sans-serif;
+
+  .tooltip-inner {
+    background: #eaf300;
+    color: #1e2a36;
+    border-radius: 0;
+    padding: 10px;
+
+    font-size: 18px;
+    text-align: center;
+
+    a {
+      color: #1e2a36;
+    }
+  }
+
+  .tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: #eaf300;
+    z-index: 1;
+  }
+
+  &[x-placement^="top"] {
+    margin-bottom: 10px;
+
+    .tooltip-arrow {
+      border-width: 10px 10px 0 10px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -10px;
+      left: calc(50% - 10px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: 10px;
+
+    .tooltip-arrow {
+      border-width: 0 10px 10px 10px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -10px;
+      left: calc(50% - 10px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &.popover {
+    $color: #1e2a36;
+
+    .popover-inner {
+      background: $color;
+      color: black;
+      padding: 24px;
+      border-radius: 5px;
+      box-shadow: 0 5px 30px rgba(black, .1);
+    }
+
+    .popover-arrow {
+      border-color: $color;
+    }
+  }
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .15s, visibility .15s;
+  }
+
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .15s;
+  }
+}
+</style>
