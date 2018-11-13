@@ -29,7 +29,8 @@
       </li>
     </ol>
 
-    <p><a target="_blank" href="raziskava.pdf">Raziskavo</a> je pripravil Inštitut za študije stanovanj in prostora v sodelovanju s Fakulteto za družbene vede in Inštitutom za politike prostora, predstavitev pa Danes je nov dan, Inštitut za druga vprašanja.</p>
+    <!-- <p><a target="_blank" href="raziskava.pdf">Raziskavo</a> je pripravil Inštitut za študije stanovanj in prostora v sodelovanju s Fakulteto za družbene vede in Inštitutom za politike prostora, predstavitev pa Danes je nov dan, Inštitut za druga vprašanja.</p> -->
+    <p>Raziskavo je pripravil Inštitut za študije stanovanj in prostora v sodelovanju s Fakulteto za družbene vede in Inštitutom za politike prostora, predstavitev pa Danes je nov dan, Inštitut za druga vprašanja.</p>
   </div>
 </template>
 

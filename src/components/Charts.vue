@@ -43,7 +43,7 @@
       nedosegljiva večini prebivalcev Ljubljane.<sup><a href="#footnote-3">[3]</a></sup>
     </p>
 
-    <hr>
+    <!-- <hr>
 
     <h2 class="fancy-title">Občina ne naredi dovolj</h2>
     <div class="scroll-fade">
@@ -54,7 +54,7 @@
     <p>Glede na dolgoletne trende gradnje neprofitnih stanovanj (120 na leto) bo Ljubljana
       trenutni primanjkljaj 4000 stanovanj odpravila <b>leta 2050</b>.<sup><a href="#footnote-4">[4]</a></sup>
       <sup><a href="#footnote-5">[5]</a></sup>
-    </p>
+    </p> -->
   </div>
 </template>
 
