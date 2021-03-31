@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stanovanja-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: t0m.k8s.djnd.si
+    http:
+      paths:
+      - path: /stanovanja/(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: stanovanja
+            port:
+              number: 80

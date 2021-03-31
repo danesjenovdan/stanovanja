@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stanovanja-deployment
+  labels:
+    app: stanovanja
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stanovanja
+  template:
+    metadata:
+      labels:
+        app: stanovanja
+    spec:
+      containers:
+      - name: stanovanja
+        image: rg.fr-par.scw.cloud/djnd/stanovanja:latest
+        ports:
+        - containerPort: 8080
