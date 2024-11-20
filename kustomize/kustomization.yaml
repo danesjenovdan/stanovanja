@@ -8,4 +8,4 @@ resources:
 images:
   - name: stanovanja
     newName: rg.fr-par.scw.cloud/djnd/stanovanja
-    newTag: 'latest'
+    newTag: 'fe2c8d6a1d6fa14f1a26844498fb2f05e926da96'
