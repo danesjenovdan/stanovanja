@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stanovanja
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - stanovanja.djnd.si
+        - stanovanja.danesjenovdan.si
+      secretName: stanovanja-tls
+  rules:
+    - host: stanovanja.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: stanovanja
+                port:
+                  number: 80
+    - host: stanovanja.danesjenovdan.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: stanovanja
+                port:
+                  number: 80

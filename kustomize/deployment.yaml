@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stanovanja
+  labels:
+    app: stanovanja
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stanovanja
+  template:
+    metadata:
+      labels:
+        app: stanovanja
+    spec:
+      containers:
+        - name: stanovanja
+          image: stanovanja
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: 50Mi
+              cpu: 50m
+            limits:
+              memory: 50Mi
+              cpu: 50m
