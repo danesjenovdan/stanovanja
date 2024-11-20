@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Fetching from GitHub."
-cd /gome/djnd/stanovanja
+cd /home/djnd/stanovanja
 git fetch --all
 
 echo "Resetting to remote HEAD."
